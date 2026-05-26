@@ -21,7 +21,7 @@ CineVibe/
 Edit `backend/src/main/resources/application.yml`:
 ```yaml
 tmdb:
-  api-key: YOUR_TMDB_API_KEY_HERE
+  api-key: 2659aad84af4d618a3c533c8ca11a476
 ```
 
 ### 2. Start the Backend

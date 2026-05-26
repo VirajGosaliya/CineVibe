@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CineVibe — A cinematic movie recommendation app. Discover trending films, filter by genre and rating, and build your personal watchlist.">
+    <meta name="theme-color" content="#0f1117">
+    <title>CineVibe — Discover Your Next Favorite Movie</title>
+
+    <!-- Google Fonts: Outfit (display) + Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <div class="app-layout" id="app">
+
+        <!-- ═══════════ HEADER ═══════════════════════════════════ -->
+        <header class="app-header">
+            <div class="header-inner">
+                <!-- Brand -->
+                <div class="brand">
+                    <div class="brand-icon" aria-hidden="true">🎬</div>
+                    <span class="brand-name">CineVibe</span>
+                </div>
+
+                <!-- Spacer -->
+                <div style="flex:1"></div>
+
+                <!-- Favorites Toggle -->
+                <button class="favorites-toggle" id="favoritesToggle" aria-label="Toggle favorites sidebar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                    <span>Watchlist</span>
+                    <span class="favorites-badge" id="favoritesBadge">0</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- ═══════════ MAIN CONTENT ═════════════════════════════ -->
+        <main class="main-content" id="mainContent">
+
+            <!-- Hero Section with Search -->
+            <section class="hero-section animate-fade-up" id="heroSection">
+                <h1 class="hero-title">Discover Your Next Favorite Movie</h1>
+                <p class="hero-subtitle">Search thousands of films, explore by genre, and curate your personal watchlist.</p>
+
+                <div class="search-wrapper" id="searchWrapper">
+                    <div class="search-bar" id="searchBar">
+                        <!-- Search Icon -->
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+
+                        <input
+                            type="text"
+                            class="search-input"
+                            id="searchInput"
+                            placeholder="Search for a movie..."
+                            autocomplete="off"
+                            aria-label="Search movies"
+                        >
+
+                        <!-- Clear Button -->
+                        <button class="search-clear" id="searchClear" aria-label="Clear search">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Auto-Suggest Dropdown -->
+                    <div class="search-dropdown" id="searchDropdown" role="listbox" aria-label="Search suggestions"></div>
+                </div>
+            </section>
+
+            <!-- Genre Filters -->
+            <section class="filters-section animate-fade-up" style="animation-delay: 150ms;" id="filtersSection">
+                <div class="filters-header">
+                    <h2 class="filters-title" id="sectionTitle">🔥 Trending This Week</h2>
+                    <div class="rating-filter">
+                        <span class="rating-label">Min Rating:</span>
+                        <input type="range" class="rating-slider" id="ratingSlider" min="0" max="10" step="0.5" value="0" aria-label="Minimum rating filter">
+                        <span class="rating-value" id="ratingValue">0</span>
+                    </div>
+                </div>
+                <div class="genre-pills" id="genrePills">
+                    <!-- Genre pills injected by JS -->
+                </div>
+            </section>
+
+            <!-- Movies Grid -->
+            <section class="movies-section" id="moviesSection">
+                <div class="movies-grid stagger-children" id="moviesGrid">
+                    <!-- Movie cards injected by JS -->
+                </div>
+
+                <!-- Loading State -->
+                <div class="loading-container" id="loadingState" style="display:none;">
+                    <div class="spinner"></div>
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display:none;">
+                    <div class="empty-state-icon">🎞️</div>
+                    <p class="empty-state-text">No movies found</p>
+                    <p class="empty-state-sub">Try adjusting your filters or search for something else.</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- ═══════════ FAVORITES SIDEBAR ════════════════════════ -->
+        <aside class="favorites-sidebar" id="favoritesSidebar" aria-label="Favorites watchlist">
+            <div class="sidebar-header">
+                <h3 class="sidebar-title">
+                    <span>❤️</span>
+                    <span>My Watchlist</span>
+                </h3>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Drop Zone (visible when dragging from cards) -->
+            <div class="sidebar-dropzone" id="sidebarDropzone">
+                <p>🎯 Drop here to add to watchlist</p>
+            </div>
+
+            <!-- Favorites List -->
+            <div class="favorites-list" id="favoritesList">
+                <div class="favorites-empty" id="favoritesEmpty">
+                    <div class="favorites-empty-icon">🍿</div>
+                    <p class="favorites-empty-text">
+                        Your watchlist is empty.<br>
+                        Click the <strong>♥</strong> on any movie card to add it here.
+                    </p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script src="js/api.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/recommendations.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

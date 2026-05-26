@@ -1,0 +1,120 @@
+/* ═══════════════════════════════════════════════════════════════
+   CineVibe — Design Tokens (variables.css)
+   A cinematic dark-mode palette with electric violet accents,
+   premium typography, and fluid spacing scale.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+    /* ─── Backgrounds ─────────────────────────────────────────── */
+    --bg-primary:       hsl(220, 20%, 6%);
+    --bg-secondary:     hsl(220, 18%, 9%);
+    --bg-card:          hsl(220, 18%, 11%);
+    --bg-card-hover:    hsl(220, 18%, 14%);
+    --bg-glass:         hsla(220, 20%, 14%, 0.55);
+    --bg-glass-hover:   hsla(220, 20%, 18%, 0.65);
+    --bg-input:         hsla(220, 20%, 12%, 0.8);
+    --bg-overlay:       hsla(220, 25%, 4%, 0.85);
+    --bg-sidebar:       hsl(220, 18%, 8%);
+
+    /* ─── Accent Colors ───────────────────────────────────────── */
+    --accent:           hsl(265, 90%, 65%);
+    --accent-hover:     hsl(265, 90%, 72%);
+    --accent-dim:       hsl(265, 50%, 40%);
+    --accent-glow:      hsla(265, 90%, 65%, 0.3);
+    --accent-glow-lg:   hsla(265, 90%, 65%, 0.15);
+
+    /* ─── Text ────────────────────────────────────────────────── */
+    --text-primary:     hsl(0, 0%, 95%);
+    --text-secondary:   hsl(220, 12%, 70%);
+    --text-muted:       hsl(220, 10%, 50%);
+    --text-inverse:     hsl(220, 20%, 6%);
+
+    /* ─── Semantic ────────────────────────────────────────────── */
+    --gold:             hsl(45, 100%, 58%);
+    --gold-dim:         hsl(45, 60%, 40%);
+    --success:          hsl(145, 65%, 50%);
+    --danger:           hsl(0, 75%, 60%);
+    --info:             hsl(200, 80%, 60%);
+
+    /* ─── Borders ─────────────────────────────────────────────── */
+    --border-subtle:    hsla(220, 15%, 25%, 0.4);
+    --border-card:      hsla(220, 15%, 20%, 0.5);
+    --border-accent:    hsla(265, 90%, 65%, 0.3);
+
+    /* ─── Typography ──────────────────────────────────────────── */
+    --font-display:     'Outfit', system-ui, sans-serif;
+    --font-body:        'Inter', system-ui, sans-serif;
+    --font-mono:        'JetBrains Mono', monospace;
+
+    --fs-xs:            0.75rem;    /* 12px */
+    --fs-sm:            0.8125rem;  /* 13px */
+    --fs-base:          0.9375rem;  /* 15px */
+    --fs-md:            1.0625rem;  /* 17px */
+    --fs-lg:            1.25rem;    /* 20px */
+    --fs-xl:            1.5rem;     /* 24px */
+    --fs-2xl:           2rem;       /* 32px */
+    --fs-3xl:           2.75rem;    /* 44px */
+    --fs-hero:          3.5rem;     /* 56px */
+
+    --fw-normal:        400;
+    --fw-medium:        500;
+    --fw-semibold:      600;
+    --fw-bold:          700;
+    --fw-extrabold:     800;
+
+    --lh-tight:         1.2;
+    --lh-normal:        1.5;
+    --lh-relaxed:       1.7;
+
+    /* ─── Spacing ─────────────────────────────────────────────── */
+    --space-xxs:        0.25rem;    /* 4px */
+    --space-xs:         0.5rem;     /* 8px */
+    --space-sm:         0.75rem;    /* 12px */
+    --space-md:         1rem;       /* 16px */
+    --space-lg:         1.5rem;     /* 24px */
+    --space-xl:         2rem;       /* 32px */
+    --space-2xl:        3rem;       /* 48px */
+    --space-3xl:        4rem;       /* 64px */
+    --space-4xl:        6rem;       /* 96px */
+
+    /* ─── Radii ───────────────────────────────────────────────── */
+    --radius-sm:        6px;
+    --radius-md:        10px;
+    --radius-lg:        14px;
+    --radius-xl:        20px;
+    --radius-pill:      999px;
+    --radius-round:     50%;
+
+    /* ─── Shadows ─────────────────────────────────────────────── */
+    --shadow-sm:        0 2px 8px hsla(0, 0%, 0%, 0.25);
+    --shadow-md:        0 4px 20px hsla(0, 0%, 0%, 0.35);
+    --shadow-lg:        0 8px 40px hsla(0, 0%, 0%, 0.45);
+    --shadow-glow:      0 0 30px var(--accent-glow);
+    --shadow-card:      0 4px 24px hsla(0, 0%, 0%, 0.3);
+    --shadow-card-hover: 0 12px 48px hsla(0, 0%, 0%, 0.5), 0 0 40px var(--accent-glow-lg);
+
+    /* ─── Transitions ─────────────────────────────────────────── */
+    --ease-out:         cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out:      cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
+    --duration-fast:    150ms;
+    --duration-normal:  300ms;
+    --duration-slow:    500ms;
+    --transition:       all var(--duration-normal) var(--ease-in-out);
+    --transition-fast:  all var(--duration-fast) var(--ease-in-out);
+    --transition-slow:  all var(--duration-slow) var(--ease-out);
+
+    /* ─── Z-Index Scale ───────────────────────────────────────── */
+    --z-base:           1;
+    --z-card:           10;
+    --z-dropdown:       100;
+    --z-sidebar:        200;
+    --z-overlay:        300;
+    --z-modal:          400;
+    --z-toast:          500;
+
+    /* ─── Layout ──────────────────────────────────────────────── */
+    --sidebar-width:    340px;
+    --header-height:    72px;
+    --max-content:      1400px;
+}

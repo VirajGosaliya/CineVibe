@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+tmdb:
+  api-key: 2659aad84af4d618a3c533c8ca11a476
+  base-url: https://api.themoviedb.org/3
+  image-base-url: https://image.tmdb.org/t/p
+
+spring:
+  jackson:
+    default-property-inclusion: non_null

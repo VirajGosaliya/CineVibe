@@ -1,0 +1,12 @@
+C:\Users\viraj\OneDrive\Desktop\CineVibe\backend\src\main\java\com\cinevibe\CineVibeApplication.java
+C:\Users\viraj\OneDrive\Desktop\CineVibe\backend\src\main\java\com\cinevibe\config\TmdbConfig.java
+C:\Users\viraj\OneDrive\Desktop\CineVibe\backend\src\main\java\com\cinevibe\config\WebConfig.java
+C:\Users\viraj\OneDrive\Desktop\CineVibe\backend\src\main\java\com\cinevibe\controller\FavoritesController.java
+C:\Users\viraj\OneDrive\Desktop\CineVibe\backend\src\main\java\com\cinevibe\controller\MovieController.java
+C:\Users\viraj\OneDrive\Desktop\CineVibe\backend\src\main\java\com\cinevibe\dto\GenreDto.java
+C:\Users\viraj\OneDrive\Desktop\CineVibe\backend\src\main\java\com\cinevibe\dto\MovieDto.java
+C:\Users\viraj\OneDrive\Desktop\CineVibe\backend\src\main\java\com\cinevibe\dto\TmdbSearchResponse.java
+C:\Users\viraj\OneDrive\Desktop\CineVibe\backend\src\main\java\com\cinevibe\model\FavoriteMovie.java
+C:\Users\viraj\OneDrive\Desktop\CineVibe\backend\src\main\java\com\cinevibe\service\FavoritesService.java
+C:\Users\viraj\OneDrive\Desktop\CineVibe\backend\src\main\java\com\cinevibe\service\RecommendationService.java
+C:\Users\viraj\OneDrive\Desktop\CineVibe\backend\src\main\java\com\cinevibe\service\TmdbService.java

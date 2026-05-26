@@ -15,7 +15,7 @@ CineVibe/
 ### Prerequisites
 - **Java 21** (JDK)
 - **Maven 3.9+** (or use the included Maven wrapper)
-- **TMDb API Key** — Sign up at [themoviedb.org](https://www.themoviedb.org/settings/api)
+- **TMDb API Key** — 2659aad84af4d618a3c533c8ca11a476
 
 ### 1. Configure TMDb API Key
 Edit `backend/src/main/resources/application.yml`:
